@@ -2,21 +2,26 @@ from tkinter import *
 import csv
 root = Tk()
 
-list = []
+Names = []
 entireSet = []
+oppSelections = []
 
 #Gets your CSV into lists
 with open('champions.csv') as csvfile:
     championsCSV = csv.reader(csvfile, delimiter=',')
     for row in championsCSV:
 
-        list.append(row[0])
+        Names.append(row[0])
         entireSet.append(row)
 
 #Calls your test print function
 def printSelection1():
+    global oppSelections
+
     selection = Opp1List.curselection()
-    print(entireSet[selection[0]])
+#    print(entireSet[selection[0]])
+    oppSelections.append(entireSet[selection[0]])
+    print(oppSelections)
 
 def printSelection2():
     selection = Opp2List.curselection()
@@ -57,7 +62,7 @@ Opp4List = Listbox(root, selectmode = SINGLE)
 Opp5List = Listbox(root, selectmode = SINGLE)
 
 j = 0
-for i in list:
+for i in Names:
 
     Opp1List.insert(j, i)
     Opp2List.insert(j, i)
