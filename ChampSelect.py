@@ -5,6 +5,8 @@ root = Tk()
 Names = []
 entireSet = []
 oppSelections = []
+MagicPwr = 0
+PhysicalPwr = 0
 
 #Gets your CSV into lists
 with open('champions.csv') as csvfile:
@@ -17,27 +19,98 @@ with open('champions.csv') as csvfile:
 #Calls your test print function
 def printSelection1():
     global oppSelections
+    global MagicPwr
+    global PhysicalPwr
 
     selection = Opp1List.curselection()
-#    print(entireSet[selection[0]])
     oppSelections.append(entireSet[selection[0]])
-    print(oppSelections)
+    Opp1LabelChose = Label(root, text="First oppenent is " + Names[selection[0]])
+    Opp1LabelChose.grid(row=3, column=0)
+    if entireSet[selection[0]][6] == "Physical":
+        PhysicalPwr = PhysicalPwr + int(entireSet[selection[0]][1])
+        print("Physical Power is: " + str(PhysicalPwr))
+        print("Magic Power is: " + str(MagicPwr))
+
+    elif entireSet[selection[0]][6] == "Magic":
+        MagicPwr = MagicPwr + int(entireSet[selection[0]][1])
+        print("Magic Power is: " + str(MagicPwr))
+        print("Physical Power is: " + str(PhysicalPwr))
 
 def printSelection2():
+    global oppSelections
+    global MagicPwr
+    global PhysicalPwr
+
     selection = Opp2List.curselection()
-    print(entireSet[selection[0]])
+    oppSelections.append(entireSet[selection[0]])
+    Opp2LabelChose = Label(root, text="Second oppenent is " + Names[selection[0]])
+    Opp2LabelChose.grid(row=3, column=1)
+    if entireSet[selection[0]][6] == "Physical":
+        PhysicalPwr = PhysicalPwr + int(entireSet[selection[0]][1])
+        print("Physical Power is: " + str(PhysicalPwr))
+        print("Magic Power is: " + str(MagicPwr))
+
+    elif entireSet[selection[0]][6] == "Magic":
+        MagicPwr = MagicPwr + int(entireSet[selection[0]][1])
+        print("Physical Power is: " + str(PhysicalPwr))
+        print("Magic Power is: " + str(MagicPwr))
 
 def printSelection3():
+    global oppSelections
+    global MagicPwr
+    global PhysicalPwr
+
     selection = Opp3List.curselection()
-    print(entireSet[selection[0]])
+    oppSelections.append(entireSet[selection[0]])
+    Opp3LabelChose = Label(root, text="Third oppenent is " + Names[selection[0]])
+    Opp3LabelChose.grid(row=3, column=2)
+    if entireSet[selection[0]][6] == "Physical":
+        PhysicalPwr = PhysicalPwr + int(entireSet[selection[0]][1])
+        print("Physical Power is: " + str(PhysicalPwr))
+        print("Magic Power is: " + str(MagicPwr))
+
+    elif entireSet[selection[0]][6] == "Magic":
+        MagicPwr = MagicPwr + int(entireSet[selection[0]][1])
+        print("Physical Power is: " + str(PhysicalPwr))
+        print("Magic Power is: " + str(MagicPwr))
 
 def printSelection4():
+    global oppSelections
+    global MagicPwr
+    global PhysicalPwr
+
     selection = Opp4List.curselection()
-    print(entireSet[selection[0]])
+    oppSelections.append(entireSet[selection[0]])
+    Opp4LabelChose = Label(root, text="Fourth oppenent is " + Names[selection[0]])
+    Opp4LabelChose.grid(row=3, column=3)
+    if entireSet[selection[0]][6] == "Physical":
+        PhysicalPwr = PhysicalPwr + int(entireSet[selection[0]][1])
+        print("Physical Power is: " + str(PhysicalPwr))
+        print("Magic Power is: " + str(MagicPwr))
+
+    elif entireSet[selection[0]][6] == "Magic":
+        MagicPwr = MagicPwr + int(entireSet[selection[0]][1])
+        print("Physical Power is: " + str(PhysicalPwr))
+        print("Magic Power is: " + str(MagicPwr))
 
 def printSelection5():
+    global oppSelections
+    global MagicPwr
+    global PhysicalPwr
+
     selection = Opp5List.curselection()
-    print(entireSet[selection[0]])
+    oppSelections.append(entireSet[selection[0]])
+    Opp5LabelChose = Label(root, text="Fifth oppenent is " + Names[selection[0]])
+    Opp5LabelChose.grid(row=3, column=4)
+    if entireSet[selection[0]][6] == "Physical":
+        PhysicalPwr = PhysicalPwr + int(entireSet[selection[0]][1])
+        print("Physical Power is: " + str(PhysicalPwr))
+        print("Magic Power is: " + str(MagicPwr))
+
+    elif entireSet[selection[0]][6] == "Magic":
+        MagicPwr = MagicPwr + int(entireSet[selection[0]][1])
+        print("Physical Power is: " + str(PhysicalPwr))
+        print("Magic Power is: " + str(MagicPwr))
 
 #All of your Opp Label initializaiton
 Opp1Label = Label(root, text="1st Opponent Champion")
