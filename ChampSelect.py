@@ -112,6 +112,25 @@ def printSelection5():
         print("Physical Power is: " + str(PhysicalPwr))
         print("Magic Power is: " + str(MagicPwr))
 
+
+    if MagicPwr == 0:
+        armorLabel = Label(root, text="The opposing team is 100% physical damage")
+        armorLabel.grid(row=4, column=2)
+    elif PhysicalPwr == 0:
+        armorLabel = Label(root, text="The opposing team is 100% magic damage")
+        armorLabel.grid(row=4, column=2)
+    else:
+        physArmorPerc = (PhysicalPwr/((MagicPwr + PhysicalPwr)*1.0))*100
+        magArmorPerc = (MagicPwr/((MagicPwr + PhysicalPwr)*1.0))*100
+        armorLabel = Label(root, text="The opposing team is %d magic damage and %d physical damage" % (magArmorPerc, physArmorPerc))
+        armorLabel.grid(row=4, column=2)
+
+#    print(physArmorPerc)
+#    print(magArmorPerc)
+
+#    armorLabel = Label(root, text="The opposing team is %d physical armor and %d magic armor." % (physArmorPerc, magArmorPerc))
+#    armorLabel.grid(row=4, column=0)
+
 #All of your Opp Label initializaiton
 Opp1Label = Label(root, text="1st Opponent Champion")
 Opp2Label = Label(root, text="2nd Opponent Champion")
